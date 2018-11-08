@@ -1,0 +1,340 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package strings_rosario_d_8;
+import java.util.Scanner;
+/**
+ *
+ * @author Daniel
+ */
+public class Strings_eRosario_D_8 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner player = new Scanner(System.in);
+        String name = null;     // GAME HAS 3 diffrent endings
+        String mood = null;    // for error shooting when put the wrong answer instead of giving a re try it plays the 1 of 2 
+        String cross = null;   // as when going Right or left and choosing nothing it will choose a path for you instead of error
+        String advice = null;
+        String idle = null;
+        String sneak = null;
+        String Enter = player.nextLine();
+        String Sneak = null;
+        String Kill = null;
+        String lock = null;
+        String Which = null;
+        String Gun = null;
+        String Evac = null;
+        String Airfield = null;
+        String Decide = null;
+        
+        System.out.println((char)27 + "[31mRemeber answers are not case sensitive");
+        System.out.println("And remeber if it does not prompt you for a respone type what ya want");
+        System.out.println("Hello...Hello any body here");
+        System.out.println("Ah over here i think i found a live one");
+        System.out.println((char)27 + "[31mWhat is your name boy?");
+         name = player.nextLine();                              // This is where scanner comes into play using the String to fill in next lines
+         if(name.equalsIgnoreCase("Stabs Myself")){ // this right here is the magic command while not a boolean its much better as when a certain phrase is enterd it activates a command
+             System.out.println("Holy $@!# what on earth");
+         }
+    else{
+         System.out.println("so you are.." +name); // this is the first time string comes into play using your answer as a fill for "name"
+         System.out.println("well " +name );
+         System.out.println("There has been a massive radioactive leak we need to get out of here");
+         System.out.println((char) 27 +"[31mHow are you feeling");
+          mood = player.nextLine();
+         System.out.println("so your feeling a little "+mood); // player response for mood
+         System.out.println("It seems your Gas mask has saved you from suffocation");
+         System.out.println("well that normal i suppose lets start moving");
+         name = player.nextLine();
+         System.out.println("Well Let me catch you up to speed");
+         System.out.println("The nuclear plant had erupted and radiation is coming straight at us");
+         System.out.println("We need to make it to the evac point and get out of here");
+         System.out.println("What is that");
+          idle = player.nextLine(); // these idle lines are to add enter when wanting to contnue so not to be ambushed by mountains of text
+         System.out.println("Oh no ");
+         System.out.println("We have come to a crossroad");
+         System.out.println((char) 27 +"[31mWe have to go Left or Right your choice");
+         System.out.println((char) 27 +"[36mBut left i hear a beeping");
+             System.out.println("Please speak Loud as i cant hear you over the beeping");
+         cross = player.nextLine();
+         if(cross.equalsIgnoreCase("right")){ // first choice of the game that can KILL
+             System.out.print(cross.toLowerCase());
+        System.out.println("  Ah going right i see nice choice");
+       System.out.println("I see that on the left there was some land mines");
+       System.out.println("they dont detonate when stepped on but when stepped off of");
+             System.out.println((char) 27 +"[31mWould you like to learn some advice");
+             idle = player.nextLine();
+             System.out.println("Ah I could not hear what you said but i dont care ");
+             System.out.println("Anyways I see you have a KNIFE that could come in handy");
+             System.out.println("And remeber to search in your MEMORY for any usefull info for later");
+             idle = player.nextLine();
+             //--------------------------------------------------------------------------------------
+             System.out.println("*walks to a nearby camp*");
+             idle = player.nextLine();
+             System.out.println("Oh no my comrade i see some bandits");
+             System.out.println("We will have to pass around them");
+             System.out.println((char) 27 +"[31mShould we make a RUN for it or SNEAK around");
+             Sneak = player.nextLine();
+             if(Sneak.equalsIgnoreCase("SNEAK")){
+                 System.out.println("Okay i dont think they have seen us");
+                 System.out.println("Okay there is a enemy in front of this door");
+                 System.out.println((char) 27 +"[31mDo you have <ANYTHING> to take care of him");
+                 Kill = player.nextLine();
+                 if(Kill.equalsIgnoreCase("KNIFE")){
+                     System.out.println("You use your KNIFE and assasinate the enemy in front of you");
+                     System.out.println("He drops his GUN and you pick it up and pocket it");
+                     System.out.println("Lets move on");
+                     idle = player.nextLine();
+                     System.out.println((char) 27 +"[36mWait a minute that door to the left has a lock if only we could get in open");
+                     lock = player.nextLine();
+                     //--------------------- ERROR
+                    if(lock.equalsIgnoreCase("GUN")){
+                        System.out.println("You shoot the lock and the door flys open");
+                        System.out.println("Well you just shot a gun and the entire compound knows we are here");
+                        System.out.println("so RUN as fast as you can");
+                        idle = player.nextLine();
+                        System.out.println("You run into the courtyard and a man runs at you with a sword");
+                        System.out.println((char) 27 +"[31m<ACTION>");
+                        Gun = player.nextLine();
+                        if(Gun.equalsIgnoreCase("GUN")){
+                            System.out.println("You shoot the man charging you and your gun runs empty and nikoli sprints with you");
+                            System.out.println("Nikoli calls for the evac to come to you");
+                            idle = player.nextLine();
+                            System.out.println("As you are running you get pinned by a bad guy and you KNIFE falls");
+                            System.out.println("You go to use your GUN but its out of ammunition");
+                            System.out.println("Nikoli charges in and kicks the guy off of you and you run to the evac");
+                            System.out.println((char) 27 + "[31mNikoli gets tackled you can help if you throw your <ITEM>");
+                             Evac = player.nextLine();
+                            if(Evac.equalsIgnoreCase("GUN")){
+                                System.out.println("You throw you gun and knocks the attacker off"); //ending number 2 the Action end
+                                System.out.println("Nice thinking now run the APC in right in front of us");
+                                System.out.println("You and nikoli bolt for the APC and Dive inside and take off");
+                                System.out.println("We did it We have made it");
+                                
+                                
+                        }
+                                 else{
+                     System.out.println("Who the hell tapped me");
+                     System.out.println("WAIT WHO ARE YOU *BANG*"); // Death by wrong answer
+                 
+                 
+                 
+                 
+                 
+                 
+                        }
+                        
+                        
+                        
+                                                          }
+                        
+                        
+    else{
+                            System.out.println("You swing your knife at the man charging but misses");
+                            System.out.println("as he is still 10 feet away and plunges his blade into you");
+                            System.out.println("nikoli picks you up and drags you to the evac");
+                            System.out.println("You then pass out");
+                            idle = player.nextLine();
+                            System.out.println("Hey my friend you have awoke from the coma");
+                            System.out.println("You are lucky the blade nearly missed your heart"); //ending number 3 "almost alive"
+                            System.out.println("You also dropped this *your gas mask*");
+                            System.out.println("Well you made it not in good condition but still your alive");
+                                    
+                           
+                        }
+                        
+                        
+     
+                        
+                        
+                        
+                    
+                     
+                     
+                                          }
+    else{
+                     System.out.println("Welp that didnt work i guess we should move on");  
+                        System.out.println("You walk into a lobby and find a group of 3 they charge you with knifes");
+                        System.out.println((char) 27 +"[31muse KNIFE or GUN");
+                        Which = player.nextLine();
+                        if(Which.equalsIgnoreCase("KNIFE")){
+                            System.out.println("you stab the first one and slash the 2nd");
+                            System.out.println("the third one chrages you and nikoli throws him out the nearby window"); // ending number 1 GOOD
+                            System.out.println("You got to be more careful friend now come the evac is close");
+                            idle = player.nextLine();
+                            System.out.println("You and Nikoli see the evac zone and sneak up to it");
+                            System.out.println("You slip away out of the camp in the quiet of night");
+                            System.out.println("Well my friend we have made it out of that camp");
+                            idle = player.nextLine();
+                            System.out.println("Well to get to the evac point we have to cross the airfield");
+                            System.out.println("Crossing it wont be an easy task a bandit paramilitary faction");
+                            System.out.println("is currently occupying it");
+                            idle = player.nextLine();
+                            System.out.println("Our best bet would be to sneak but going loud could work");
+                            System.out.println("if we need to");
+                            idle = player.nextLine();
+                            System.out.println("Ah i see you are running low on bullets for your gun");
+                            System.out.println("That could have been bad here is 10 BULLETS use them wisely");
+                            idle = player.nextLine();
+                            System.out.println("*approaching the airfield*");
+                            System.out.println("Okay comrade we need to choose where to go");
+                            System.out.println((char) 27 + "[31mShould we sneak through the HANGER or the SEWER");
+                            Airfield = player.nextLine();
+                            if(Airfield.equalsIgnoreCase("HANGER")){
+                                System.out.println("Okay lets go to the Hanger");
+                                idle = player.nextLine();
+                                System.out.println("*you and Nikoli approach the gate and you cut");
+                                System.out.println("The degrading chainlink fence with your KNIFE");
+                                System.out.println("and enter the hanger*");
+                                 idle = player.nextLine();
+                                 System.out.println("okay come on there are 2 armed gaurds in front of us ");
+                                 System.out.println((char) 27 +"[31mShould we KILL them or SNEAK around them");
+                               Airfield = player.nextLine();
+                            if(Airfield.equalsIgnoreCase("KILL")){
+                                System.out.println("Okay ill get the one on the left you get the right");
+                                System.out.println("*using his fingers he says 3 2 1");
+                                System.out.println("You take your KNIFE and take out the one on the right");
+                                System.out.println("The gaurd drops his AK and you trade it for your GUN");
+                                idle = player.nextLine();
+                                System.out.println("Okay now we need to cross the airfield we could use that truck");
+                                System.out.println("in the corner and use there body as a disguise");
+                                System.out.println((char) 27 +"[31mBut only a fool would FIGHT we should take the TRUCK");
+                                idle = player.nextLine();
+                                System.out.println("Default text");
+                                        
+                            
+                            
+                                 
+                               
+                            
+                            
+                            
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        }
+                            
+                            
+                            
+                            
+                            
+                            
+                                                  
+    else{
+                                System.out.println("Okay we can sneak around by going behind this truck");
+                                System.out.println("*when going behind the truck you notice that there is a crate open");
+                                System.out.println("You notice a 50.cal with ammunition sticking out");
+                                idle = player.nextLine();
+                                System.out.println("Ha i know what you are thinking but no");
+                                System.out.println("we could not carry that it is stationary that would only");
+                                System.out.println("be usefull if we neded to DEFEND this hanger for whatever reason.");
+                                idle = player.nextLine();
+                                System.out.println("Default text");
+                                
+                                
+                            }
+                            }
+                            
+                             else{
+                            
+                                System.out.println("Into the sewers we go");
+                            
+                            
+                            
+                            
+                            
+                            }
+                        }
+                         else{
+                     System.out.println("You go to pull out your weapon");
+                     System.out.println("But its to late the first enemy lunges you with a lethal blow"); // Death by wrong answer
+                            System.out.println("You have DIED");
+                 
+                 
+                 
+                 
+                 
+                 
+                        }
+                        
+                        
+                 }
+                     
+                     
+                     
+                    
+                     
+                      
+                     
+                     
+                     
+                     
+                 }
+                 
+                         
+    else{
+                     System.out.println("Who the hell tapped me");
+                     System.out.println("WAIT WHO ARE YOU *BANG*"); // Death by wrong answer
+                 
+                 
+                 
+                 
+                 
+                 
+                        }
+             
+             
+                 }
+   // else{
+      //  System.out.println("Oh no comrade you stepped on a land mine im sorry i have to leave you");
+      //       System.out.println("i wish you the best of luck "+name);
+      //  }
+             
+                 
+                 
+        
+        
+        
+        
+        
+        
+        
+        
+                        else{
+ System.out.println("OH NO THEY HAVE SEEN US RUN RUN");
+                 System.out.println("GO ILL HOLD THEM OFF");
+                 System.out.println("*gunshot* *gunshot* *death sound*");
+                 idle = player.nextLine();
+                 System.out.println("*When running a bullet tears through your Gas mask");
+                 System.out.println("You are left on the ground with radiation leaking in");
+                 System.out.println("Everything is fading to black");
+                        }
+        
+        
+        
+        
+         
+        
+        
+         
+    }
+        else{
+        System.out.println("Oh no comrade you stepped on a land mine im sorry i have to leave you");
+             System.out.println("i wish you the best of luck "+name);
+        }   
+         
+    
+}
+         }
+    }
+
+    
+
+
